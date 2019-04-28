@@ -1,0 +1,356 @@
+@import 'src/common/sass/mixin.scss';
+html,
+body {
+	width: 100%;
+	height: 100%;
+	/* font-family: microsoft yahei,'PingFang-SC-Medium'; */
+	line-height: 1.3 !important;
+}
+
+html {
+	font-size: 14px;
+}
+img{
+	width: 100%;
+  }
+
+.wrap {
+	height: 100%;
+	
+}
+
+p {
+	-webkit-margin-before: 0;
+}
+
+
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+
+
+.banner-img{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.icon-img{
+	width: 100px;/*px*/
+	height: auto;
+}
+.font16{
+	font-size: 16px;/*px*/
+}
+.font18{
+	font-size: 18px;/*px*/
+}
+.font20{
+	font-size: 20px;/*px*/
+}
+.font22{
+	font-size: 22px;/*px*/
+}
+.font24{
+	font-size: 24px;/*px*/
+}
+.font25{
+	font-size: 25px;/*px*/
+}
+.font26{
+	font-size: 26px;/*px*/
+}
+.font28{
+	font-size: 28px;/*px*/
+}
+.font30{
+	font-size: 30px;/*px*/
+}
+.font32{
+	font-size: 32px;/*px*/
+}
+.font34{
+	font-size: 34px;/*px*/
+}
+.font36{
+	font-size: 36px;/*px*/
+}
+.font40{
+	font-size: 40px;/*px*/
+}
+.font44{
+	font-size: 44px;/*px*/
+}
+.font50{
+	font-size: 50px;/*px*/
+}
+
+.font-bold{
+	font-weight: bold;
+}
+.circle{
+	border-radius:50%;
+	overflow:hidden;
+}
+.m-t-50{
+	margin-top: 50px;
+}
+.m-t-60{
+	margin-top: 60px;
+}
+.m-t-40{
+	margin-top: 40px;
+}
+.m-t-30{
+	margin-top: 30px;
+}
+.m-t-20{
+	margin-top: 20px;
+}
+.m-t-15{
+	margin-top: 15px;
+}
+.m-t-10{
+	margin-top: 10px;
+}
+.m-b-40{
+	margin-bottom: 40px;
+}
+.m-b-30{
+	margin-bottom: 30px;
+}
+.m-b-20{
+	margin-bottom: 20px;
+}
+.m-b-10{
+	margin-bottom: 10px;
+}
+.m-l-5{
+	margin-left: 5px;
+}
+.m-l-10{
+	margin-left: 10px;
+}
+.m-l-20{
+	margin-left: 20px;
+}
+.m-l-30{
+	margin-left: 30px;
+}
+.m-l-40{
+	margin-left: 40px;
+}
+.m-r-10{
+	margin-right: 10px;
+}
+.m-r-20{
+	margin-right: 20px;
+}
+.m-r-30{
+	margin-right: 30px;
+}
+.m-r-40{
+	margin-right: 40px;
+}
+.m-10{
+	margin: 10px;
+}
+.m-20{
+	margin: 20px;
+}
+.m-30{
+	margin: 30px;
+}
+.m-40{
+	margin: 40px;
+}
+.p-l-10{
+	padding-left: 10px;
+}
+.p-l-20{
+	padding-left: 20px;
+}
+.p-l-30{
+	padding-left: 30px;
+}
+.p-l-40{
+	padding-left: 40px;
+}
+.p-r-10{
+	padding-right: 10px;
+}
+.p-r-20{
+	padding-right: 20px;
+}
+.p-r-30{
+	padding-right: 30px;
+}
+.p-r-40{
+	padding-right: 40px;
+}
+.p-5{
+	padding: 5px;
+}
+.p-10{
+	padding: 10px;
+}
+.p-20{
+	padding: 20px;
+}
+.p-30{
+	padding: 30px;
+}
+.p-40{
+	padding: 40px;
+}
+
+.bg-white{
+	background-color: #fff;
+}
+.bg-yellow{
+	background-color:rgb(255, 217, 0);
+}
+.white{
+	color: #fff;
+}
+.black{
+	color:#000;
+}
+.gray{
+	color: #676767;
+}
+.lightgrey{
+	color: lightgrey;
+}
+.red{
+	color: orangered
+}
+.blue{
+	color: #6684D4;
+}
+.green{
+	color: #3F9929;
+}
+.yellow {
+		color:rgb(255, 217, 0);
+}
+	
+
+/* flex布局 */
+
+.flex-column {
+	/* 定义为flexbox的父元素 */
+	display: -webkit-box;
+	/* 老版本语法: Safa.mu-dialog-title{
+		}ri, iOS, Android browser, older WebKit browsers. */
+	display: -moz-box;
+	/* 老版本语法: Firefox (buggy) */
+	display: -ms-flexbox;
+	/* 混合版本语法: IE 10 */
+	display: -webkit-flex;
+	/* 新版本语法: Chrome 21+ */
+	display: flex;
+	/* 新版本语法: Opera 12.1, Firefox 22+ */
+	-webkit-box-direction: normal;
+	-webkit-box-orient: vertical;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	height: 100%;
+}
+
+.flex-row {
+	/* 定义为flexbox的父元素 */
+	display: -webkit-box;
+	/* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+	display: -moz-box;
+	/* 老版本语法: Firefox (buggy) */
+	display: -ms-flexbox;
+	/* 混合版本语法: IE 10 */
+	display: -webkit-flex;
+	/* 新版本语法: Chrome 21+ */
+	display: flex;
+	/* 新版本语法: Opera 12.1, Firefox 22+ */
+	-webkit-box-direction: normal;
+	-webkit-box-orient: horizontal;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+}
+
+.flex-item {
+	/* 给子元素赋予自由伸缩的能力 */
+	-webkit-box-flex: 1.0;
+	-moz-flex-grow: 1;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	overflow: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	flex-basis: 0%;
+}
+
+
+//文字超出显示...
+.ellipsis {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+//文字显示两行，超出显示...
+.overflowT2 {
+	text-overflow: -o-ellipsis-lastline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	/*! autoprefixer: off */
+	-webkit-box-orient: vertical;
+	/* autoprefixer: on */
+}
+
+//垂直居中展示
+.verticalM {
+	&:before {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+
+.verticalM-box {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+input {
+	border: none;
+	outline: none;
+}
+
+/* 浮动和清除浮动 */
+
+.floatL {
+	float: left;
+}
+
+.floatR {
+	float: right;
+}
+
+.clearfix {
+	clear: both;
+}
+
+
+
+
+

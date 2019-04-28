@@ -1,0 +1,173 @@
+$cBgColor: #fff;
+@mixin font-dpr($font-size) {
+	font-family: 'PingFang-SC-Medium';
+	font-size: $font-size;
+	[data-dpr="2"] & {
+		font-size: $font-size * 2;
+	}
+	[data-dpr="3"] & {
+		font-size: $font-size * 3;
+	}
+}
+
+@mixin sInput($bgColor, $tAlign, $color) {
+	background: $bgColor;
+	text-align: $tAlign;
+	&::-webkit-input-placeholder {
+		/* WebKit browsers */
+		color: $color;
+	}
+
+	&:-moz-placeholder {
+		/* Mozilla Firefox 4 to 18 */
+		color: $color;
+	}
+
+	&::-moz-placeholder {
+		/* Mozilla Firefox 19+ */
+		color: $color;
+	}
+
+	&:-ms-input-placeholder {
+		/* Internet Explorer 10+ */
+		color: $color;
+	}
+}
+
+
+
+
+
+
+/* 箭头 */
+
+@mixin arrow($color, $direction, $width, $borderWidth, $left) {
+	&:after {
+		content: '';
+		display: inline-block;
+		position: absolute;
+		top: 50%;
+		width: $width;
+		height: $width;
+		border-color: $color;
+		border-width: $borderWidth $borderWidth 0 0;
+		border-style: solid;
+		@if ($direction==up) {
+			right: $left;
+			transform: translateY(-50%) rotate(-45deg);
+			-webkit-transform: translateY(-50%) rotate(-45deg);
+		}
+		@else if ($direction==down) {
+			right: $left;
+			transform: translateY(-50%) rotate(135deg);
+			-webkit-transform: translateY(-50%) rotate(135deg);
+		}
+		@else if ($direction==left) {
+			left: $left;
+			transform: translateY(-50%) rotate(225deg);
+			-webkit-transform: translateY(-50%) rotate(225deg);
+		}
+		@else if ($direction==right) {
+			right: $left;
+			margin-top: -$borderWidth/2;
+			transform: translateY(-50%) rotate(45deg);
+			-webkit-transform: translateY(-50%) rotate(45deg);
+		}
+	}
+}
+
+
+
+
+
+
+
+/* 中间的划线 */
+
+@mixin line($left, $right, $color, $height) {
+	&:after {
+		content: "";
+		display: inline-block;
+		height: $height;
+		position: absolute;
+		top: 50%;
+		left: $left;
+		right: $right;
+		background: $color;
+	}
+}
+
+
+
+
+
+
+
+/* 三角形 */
+
+@mixin triangle($direction, $borderWidth, $color) {
+	content: '';
+	border: $borderWidth solid transparent;
+	width: 0;
+	height: 0;
+	position: absolute;
+	@if ($direction==up) {
+		border-bottom: $borderWidth solid $color;
+		bottom: 55%;
+	}
+	@else if ($direction==down) {
+		border-top: $borderWidth solid $color;
+		top: 55%;
+	}
+	@else if ($direction==left) {
+		border-right: $borderWidth solid $color;
+	}
+	@else if ($direction==right) {
+		border-left: $borderWidth solid $color;
+	}
+}
+
+
+
+
+
+
+/* 0.5px的边框线 */
+
+@mixin bdT($color, $direction) {
+	position: relative;
+	&:after {
+		content: " ";
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 1px;/*no*/
+		/*background-image: linear-gradient(0deg, transparent 50%, $color 50%);*/
+		@if($direction==top) {
+			top: 0;
+		}
+		@else if($direction==bottom) {
+			bottom: 0;
+		}
+		@else if($direction==left) {
+			left: 0;
+		}
+		@else if($direction==right) {
+			right: 0;
+		}
+	}
+}
+
+
+
+
+
+
+/* 背景图 */
+
+@mixin bg-image($url) {
+	background-image: url($url + '@2x.png');
+	@media (-webkit-device-pixel-ratio: 3), (device-pixel-ratio: 3) {
+		background-image: url($url + '@3x.png');
+	}
+}
