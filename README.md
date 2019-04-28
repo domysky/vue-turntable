@@ -8,7 +8,7 @@ npm install
 npm run dev
 ```
 
-## 使用组件vue-lottery说明 
+> 使用组件vue-lottery说明 
 
 ```js
 npm install vue-lottery --save
