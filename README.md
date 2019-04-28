@@ -8,6 +8,8 @@ npm install
 npm run dev
 ```
 
+## 以下已引入项目中 无需再引入
+
 > 使用组件vue-lottery说明 
 
 ```js
@@ -19,7 +21,7 @@ import lottery from 'vue-lottery'
 Vue.use(lottery)
 ```
 
-## 调用示例
+> 调用示例
 
 ```
 <lottery
@@ -35,7 +37,7 @@ Vue.use(lottery)
 />
 ```
 
-### props说明
+> props说明
 
 | 参数名 | 参数类型 | 解释 | 是否必传 |
 | :--- | :--- | :--- | :--- |
