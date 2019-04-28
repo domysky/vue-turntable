@@ -46,10 +46,10 @@
           id:3,name:'谢谢参与',isPrize:false,img:''},{
           id:4,name:'1元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
           id:5,name:'10元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
-          id:6,name:'5元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
-          id:7,name:'1元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
           id:8,name:'谢谢参与',isPrize:false,img:''},{
-          id:9,name:'1元红包',isPrize:true,img:require('@/assets/images/pointer.png')},
+          id:6,name:'1元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
+          id:7,name:'5元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
+          id:9,name:'谢谢参与',isPrize:false,img:''},
         ],
         colors: ["#f9d725","#f6ab20","#fc9714" ],
         
@@ -92,7 +92,7 @@
         ctx.fillStyle = "#fff000";
         ctx.clearRect(0,0,canvasW,canvasH);//去掉背景默认的黑色
         ctx.strokeStyle = "rgba(0,0,0,0)"; //线的颜色
-        ctx.font = '28px bold Microsoft YaHei';
+        ctx.font = '32px bold Microsoft YaHei';
         //ctx.closePath();
         //使用了beginPath(),canvas会知道是重新画一条，如果给这几条设置不同的属性也是可以的。
         for(var index = 0; index < this.prizeList.length; index++) {
@@ -123,8 +123,9 @@
            
             ctx.restore(); //很关键
 
-            this.turntableImg = canvas.toDataURL();
+            
         }
+        this.turntableImg = canvas.toDataURL();
       },
       lotteryClick () {
             this.lotteryStart = 1
@@ -156,7 +157,7 @@
 }
 .wraper{
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     
     .content{
       padding: 30px;
@@ -191,7 +192,7 @@
     background:  rgba(0, 0, 0, 0.5);
     background-size: cover;
     z-index: 999;
-
+    font-size: 14px;
     .content {
       width: 60%;
       border-radius: 20px;
