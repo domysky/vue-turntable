@@ -1,9 +1,7 @@
 # vue-turntable
 
 
-## How To Use
-
-> ES6
+## 使用组件vue-lottery说明 
 
 ```js
 npm install vue-lottery --save
