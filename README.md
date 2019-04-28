@@ -9,6 +9,9 @@ npm run dev
 ```
 根据后台返回的奖品数据绘制画布，实现可定制化转盘
 
+#### 示例
+![](turntable.gif)
+
 ### 自定义奖品数据
 
 ![效果gif](https://github.com/domysky/vue-turntable/blob/master/static/20190428170517.png?raw=true)
