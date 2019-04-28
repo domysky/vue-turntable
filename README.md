@@ -11,7 +11,7 @@ npm run dev
 
 ### 自定义奖品数据
 
-![效果gif](https://github.com/domysky/vue-turntable/blob/master/static/20190428170342.png?raw=true)
+![效果gif](https://github.com/domysky/vue-turntable/blob/master/static/20190428170517.png?raw=true)
 
 ###  canvas 绘制画板
 
@@ -19,7 +19,7 @@ npm run dev
 
 ###  效果
 
-![效果gif](https://github.com/domysky/vue-turntable/blob/master/static/20190428170517.png?raw=true)
+![效果gif](https://github.com/domysky/vue-turntable/blob/master/static/20190428170342.png?raw=true)
 
 
 参考自:https://github.com/Venler/vue-lottery
