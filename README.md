@@ -7,8 +7,10 @@
 npm install
 npm run dev
 ```
-根据奖品数据绘制画布
+根据后台返回的奖品数据绘制画布，实现可定制化转盘
 
+
+参考自:https://github.com/Venler/vue-lottery
 ## 以下已引入项目中 无需再引入
 
 > 使用组件vue-lottery说明 
