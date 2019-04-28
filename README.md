@@ -7,6 +7,7 @@
 npm install
 npm run dev
 ```
+根据奖品数据绘制画布
 
 ## 以下已引入项目中 无需再引入
 

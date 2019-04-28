@@ -25,7 +25,8 @@
     <div class="mask-box" v-if="openMask" @click="openMask=false">
       <div class="bg-white content">
         <img :src="require('@/assets/images/task_draw_reward_gereward_img.png')">
-        <div class="font28">恭喜您获得<span class="red">{{prize}}</span></div>
+        <div class="font28" v-if='prize.isPrize'>恭喜您获得<span class="red">{{prize.name}}</span></div>
+        <div class="font28" v-else>好遗憾！<span class="red">{{prize.name}}</span></div>
       </div>
     </div>
   </div>
@@ -40,17 +41,17 @@
         lotteryStart: 0,
         prizeNo: 1,
         prizeList: [{
-          id:1,name:'18万U币',img:require('@/assets/images/pointer.png')},{
-          id:2,name:'8万U币',img:require('@/assets/images/pointer.png')},{
-          id:3,name:'1万U币',img:require('@/assets/images/pointer.png')},{
-          id:4,name:'8000U币',img:require('@/assets/images/pointer.png')},{
-          id:5,name:'1000U币',img:require('@/assets/images/pointer.png')},{
-          id:6,name:'800U币',img:require('@/assets/images/pointer.png')},{
-          id:7,name:'80U币',img:require('@/assets/images/pointer.png')},{
-          id:8,name:'18U币',img:require('@/assets/images/pointer.png')},{
-          id:9,name:'8U币',img:require('@/assets/images/pointer.png')},
+          id:1,name:'1元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
+          id:2,name:'5元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
+          id:3,name:'谢谢参与',isPrize:false,img:''},{
+          id:4,name:'1元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
+          id:5,name:'10元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
+          id:6,name:'5元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
+          id:7,name:'1元红包',isPrize:true,img:require('@/assets/images/pointer.png')},{
+          id:8,name:'谢谢参与',isPrize:false,img:''},{
+          id:9,name:'1元红包',isPrize:true,img:require('@/assets/images/pointer.png')},
         ],
-        colors: ["#f9d725","#f6ab20","#fc9714","#f9d725","#f6ab20","#fc9714","#f9d725","#f6ab20","#fc9714", ],
+        colors: ["#f9d725","#f6ab20","#fc9714" ],
         
         outsideRadius: 330, //转盘外圆的半径
         textRadius: 360, //转盘奖品位置距离圆心的距离
@@ -96,7 +97,9 @@
         //使用了beginPath(),canvas会知道是重新画一条，如果给这几条设置不同的属性也是可以的。
         for(var index = 0; index < this.prizeList.length; index++) {
             var angle = this.startAngle - index * baseAngle;
-            ctx.fillStyle = this.colors[index];
+            // 避免随机产生的颜色色差较大，故配置三个颜色  实现颜色循环 
+            let color = index % 3 ? (index % 3 == 1 ? this.colors[1]:this.colors[2]) : this.colors[0] ;
+            ctx.fillStyle = color;
             ctx.beginPath();
             ctx.arc(canvasW * 0.5, canvasH * 0.5, this.outsideRadius, angle, angle + baseAngle, false);
             ctx.arc(canvasW * 0.5, canvasH * 0.5, this.insideRadius, angle + baseAngle, angle, true);
@@ -133,7 +136,7 @@
           this.lotteryStart = 0
           let index = res.prizeNo - 1
           this.openMask = true
-          this.prize = this.prizeList[index].name
+          this.prize = this.prizeList[index]
 
           console.log(this.prizeList[index])
       },
