@@ -15,6 +15,16 @@
           :lottery-width="['85%','30%']"
         />
       </div>
+      <div class="btn-box" ref='btnBox'>
+          <div class="white text-center m-t-20 font30 message">
+            本月活动剩余&nbsp;&nbsp;<span class="yellow font34">0</span>&nbsp;&nbsp;次，
+            本月已参与&nbsp;&nbsp;<span class="yellow font34">0</span>&nbsp;&nbsp;次
+          </div>
+          <div class="flex-row m-t-40 ">
+            <button  class="font30 flex-item m-r-30">活动规则</button>
+            <button   class="font30 flex-item">我的奖品</button>
+          </div>
+        </div>
     </div>
 
     <canvas id="wheelCanvas" width="680" height="680" style="border:1px solid #c3c3c3;" v-show="false">
@@ -70,7 +80,18 @@
       
     },
     mounted() {
-      this.initCanvas()
+      let prizeImgs = []
+      // 图片信息
+      for(var index = 0; index < this.prizeList.length; index++) {
+          prizeImgs[index] = new Image();
+          prizeImgs[index].src = this.prizeList[index].img;
+      }
+      let _this = this
+      //注意需要等图片加载完成后绘制
+      window.onload = function() {
+          _this.initCanvas()
+      };
+      
        
     },
     watch:{
@@ -180,6 +201,26 @@
         to{transform:rotate(360deg)}  
       }
       
+    }
+
+
+    .btn-box{
+      width: 90%;
+      margin: 0 auto;
+      padding-bottom: 20px;/*px*/
+      button{
+        padding: 15px;
+        color: #000000;
+        background-image: linear-gradient(-180deg, #FFFCA8, #C67D18);
+        border: none;
+        border-radius: 15px;
+
+      } 
+      .message{
+        padding: 15px;
+        background: rgba(66, 33, 11, 0.35);
+        border-radius: 40px;
+      }
     }
     
 }
